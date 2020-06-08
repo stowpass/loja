@@ -24,14 +24,14 @@
   <div class="login-box">
     <div class="login-logo">
       <b><?php echo lang('login_heading'); ?></b> | Admin
-          </div>
+    </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="card-body login-card-body">
-        <p class="login-box-msg"><?php echo lang('login_subheading'); ?></p>
-        <p>  <div id="infoMessage"><?php echo $message; ?></div></p>
+      <div class="card-body login-card-body">
+        <span class='login-box-msg'><?php echo  $message; ?> </span>
 
-        <?php echo form_open("auth/login"); ?>
+
+       <?php echo form_open("auth/login"); ?>
         <div class="input-group mb-3">
           <?php echo form_input($identity); ?>
           <div class="input-group-append">
@@ -56,7 +56,7 @@
               <?php echo lang('login_remember_label', 'remember'); ?>
 
               <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"'); ?>
-            
+
             </div>
           </div>
 
@@ -65,7 +65,7 @@
             <?php echo form_submit('submit', lang('login_submit_btn')); ?>
           </div>
 
-          
+
           <!-- /.col -->
         </div>
         <?php echo form_close(); ?>
