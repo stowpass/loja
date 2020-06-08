@@ -49,27 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'usuariocontroller';
+$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-$route['orcamento'] = 'orcamentocontroller/index';
-$route['orcamento/novo'] = 'orcamentocontroller/novo';
-$route['orcamento/salvar'] = 'orcamentocontroller/salvar';
-$route['orcamento/editar'] = 'orcamentocontroller/editarcliente';
-$route['orcamento/atualizar'] = 'orcamentocontroller/atualizar';
-$route['orcamento/abrir'] = 'orcamentocontroller/abrir';
-$route['orcamento/excluir'] = 'orcamentocontroller/excluir';
-
-$route['cliente'] = 'clientecontroller/index';
-$route['cliente/salvar'] = 'clientecontroller/salvar';
-$route['cliente/novo'] = 'clientecontroller/novo';
-$route['cliente/editar/(:num)']= 'clientecontroller/editar/$1';
-$route['cliente/atualizar/(:num)'] = 'clientecontroller/atualizar/$1';
-$route['cliente/abrir/(:num)'] = 'clientecontroller/abrir/$1';
-$route['cliente/excluir/(:num)'] = 'clientecontroller/excluir/$1';
-
-$route['usuarios/salvar'] = 'usuariocontroller/salvar';
-$route['usuarios/verificar'] = 'usuariocontroller/verificar';
-$route['usuarios/novo'] = 'usuariocontroller/novo';
-$route['usuarios'] = 'usuariocontroller';

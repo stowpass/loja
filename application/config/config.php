@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/loja/';
+$config['base_url'] = 'http://localhost/loja';
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'pt-br';
 
 /*
 |--------------------------------------------------------------------------
@@ -428,7 +428,7 @@ $config['standardize_newlines'] = FALSE;
 | Determines whether the XSS filter is always active when GET, POST or
 | COOKIE data is encountered
 |
-| WARNING: This feature is DEPRECATED and currently available only
+| WARNING: This feature is DEPRECAeeTED and currently available only
 |          for backwards compatibility purposes!
 |
 */
