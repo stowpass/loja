@@ -527,11 +527,11 @@ if ( ! function_exists('form_submit'))
 		$defaults = array(
 			'type' => 'submit',
 			'name' => is_array($data) ? '' : $data,
-			//'value' => $value,
+			'value' => $value,
 			'class'=> "btn btn-primary btn-block"
 		);
 
-		return '<button '._parse_form_attributes($data, $defaults)._attributes_to_string($extra).">Entrar</button>\n";
+		return '<button '._parse_form_attributes($data, $defaults)._attributes_to_string($extra).">Enviar</button>\n";
 	}
 }
 
