@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 |	my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'principal';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -16,7 +16,7 @@ $route['translate_uri_dashes'] = FALSE;
 //auth/create_user
 
 $route['usuario/novo'] = 'auth/create_user';
-$route['usuario'] = 'usuariocontroller/index';
+$route['usuario'] = 'admin/login/index';
 $route['usuario/verificar'] = 'usuariocontroller/verificar';
 $route['usuario/logout'] = 'usuariocontroller/logout';
 

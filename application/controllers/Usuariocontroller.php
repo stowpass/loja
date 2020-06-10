@@ -6,10 +6,10 @@ class Usuariocontroller extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('lyout/topo');
-		
-		$this->load->view('usuarios/listar');
-		$this->load->view('lyout/rodape');
+		//$this->load->view('lyout/topo');		
+		//$data['usuarios'] =$this->ion_auth->users()->result();;
+		$this->load->view('usuarios/login');
+		//$this->load->view('lyout/rodape');
 	}
 
 	public function novo()
