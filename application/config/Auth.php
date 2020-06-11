@@ -460,11 +460,6 @@ class Auth extends CI_Controller
 	 */
 	public function create_user()
 	{
-		//$this->load->view('lyout/topo');
-
-		//Carrega Topo///
-
-
 		$this->data['title'] = $this->lang->line('create_user_heading');
 
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
@@ -570,7 +565,6 @@ class Auth extends CI_Controller
 
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 		}
-		//$this->load->view('lyout/rodape');
 	}
 	/**
 	* Redirect a user checking if is admin

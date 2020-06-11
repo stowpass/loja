@@ -38,46 +38,75 @@
 
           <form class="form-horizontal" action="<?php echo base_url('admin/usuarios/core') ?>" method="post">
 
+                <?php 
+                if (validation_errors()) {
+                  echo '<div class="alert alert-danger" role="alert">'. validation_errors() . '</div>';
+                }
+                ?>
 
-            <div class="form-group">
-              <label for="Nome" class="col-sm-2 control-label">Nome</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="nome" id="Nome" placeholder="Nome">
-              </div>
-            </div>
+                <div class="form-group">
+                  <label for="Nome" class="col-sm-2 control-label">Nome</label>
+                  <div class="col-sm-10">
+                    <input  type="text" 
+                            class="form-control" 
+                            name="nome" 
+                            id="Nome" 
+                            value="<?php 
+                              echo ($dados != NULL ? $dados->username : set_value('nome'));
+                            ?>"
+                            placeholder="Nome">
+                  </div>
+                </div>
 
-            <div class="form-group">
-              <label for="Mail" class="col-sm-2 control-label">E-mail</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" name="email" id="Mail" placeholder="Email">
-              </div>
-            </div>
+                <div class="form-group">
+                  <label for="Mail" class="col-sm-2 control-label">E-mail</label>
+                  <div class="col-sm-10">
+                    <input  type="email" 
+                            class="form-control" 
+                            name="email" 
+                            id="Mail"
+                            value="<?php
+                             echo ($dados != NULL ? $dados->email : set_value('email'));
+                            ?>" 
+                            placeholder="Email">
+                  </div>
+                </div>
 
-            <div class="form-group">
-              <label for="senha" class="col-sm-2 control-label">Senha</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" name="senha" id="senha" placeholder="Password">
-              </div>
-            </div>
+                <div class="form-group">
+                  <label for="senha" class="col-sm-2 control-label">Senha</label>
+                  <div class="col-sm-4">
+                    <input type="password" class="form-control" name="senha" id="senha" placeholder="minimo 6 caracteres">
+                  </div>
+                </div>
 
-            <!-- Select Basic -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="status">Status</label>
-              <div class="col-md-2">
-                <select id="status" name="status" class="form-control">
-                  <option value="1" selected>Ativo</option>
-                  <option value="0">Inativo</option>
-                </select>
-              </div>
-            </div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="status">Status</label>
+                  <div class="col-md-2">
+                    <select id="status" name="status" class="form-control">
+                     <?php  if ($dados) { ?>
+                     
+                      <option value="1" <?= $dados->active == 1 ? 'selected' : ''?> >Ativo</option>
+                      <option value="0"<?= $dados->active == 0 ? 'selected' : ''?>>Inativo</option>
+                      <?php  } else { ?>
+                        <option value="1">Ativo</option>
+                      <option value="0">>Inativo</option>
+                      <?php  }?>
+                      
+                    </select>
+                  </div>
+                </div>
+                <?php if ($dados) {?>
+                <input type="hidden" name="id_usuario" value="<?= $dados->id ?>">
+                <?php  }?>
 
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for=""></label>
-              <div class="col-md-4">
-                <input  class="btn btn-primary" type="submit" value="Salvar">
-              </div>
-            </div>
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for=""></label>
+                  <div class="col-md-4">
+                    <input class="btn btn-primary" type="submit" value="Salvar">
+                  </div>
+                </div>
 
 
 

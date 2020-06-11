@@ -39,6 +39,8 @@
     <a href="<?php echo base_url('admin/usuarios/modulo')?>" title="Novo Usuario" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
   </div>
 
+
+
 </div>
         <table class="table table-striped">
           <thead>
@@ -62,8 +64,8 @@
                   ') . '</td>';
                   echo '<td class="text-center">';
                   
-                  echo '<a href="" title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
-                  echo ' <a href="" title="Exluir" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>';
+                  echo '<a href=" '. base_url('admin/usuarios/modulo/'. $usuario->id ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
+                  echo ' <a href="'. base_url('admin/usuarios/del/'. $usuario->id ) .'" title="Exluir" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>';
 
 
                   echo '</td>';

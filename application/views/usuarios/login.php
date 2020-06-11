@@ -29,6 +29,16 @@
     <div class="card-body login-card-body">
 
       <form action="" method="post">
+
+      
+      <?php 
+                if (validation_errors()) {
+                  echo '<div class="alert alert-danger" role="alert">'. validation_errors() . '</div>';
+                }
+                
+                ?>
+                
+                
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">

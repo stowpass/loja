@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets'); ?>/DataTables/datatables.css">
- 
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url('assets/template'); ?>/plugins/fontawesome-free/css/all.min.css">
@@ -83,7 +83,7 @@
 
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
-              
+
                 <p>
                   Usuarios
                   <i class="fas fa-angle-left right"></i>
@@ -104,14 +104,33 @@
                   </a>
                 </li>
 
+                <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                      Config
+                      <i class="fas fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="<?php echo base_url('admin/config'); ?>" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Loja</p>
+                      </a>
+                    </li>
+
+
+
+
+                  </ul>
+
                 <li class="nav-item">
                   <a href="<?php echo base_url('admin/login/sair'); ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-sign-out-alt"></i>
                     <p>Sair</p>
                   </a>
                 </li>
-
-              </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
