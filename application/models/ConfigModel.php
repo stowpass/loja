@@ -13,17 +13,21 @@ class ConfigModel extends CI_Model
     $query = $this->db->get('config');
     return $query->row();
     
-    
 
     }
 
 
-
 public function doUpdate()
     {
-        
-        return $this->db->update('config', $this, "id = $id");
+
+        foreach(array_keys($_POST) as $chave){
+
+            eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
+        }
+        return $this->db->update('config',$this);
+//        redirect('principal');
+       // return $this->db->update('config', $this);
 
 
-
+    }
 }

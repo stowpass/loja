@@ -19,11 +19,9 @@ class Config extends CI_Controller
 
 		if ($this->form_validation->run() == TRUE) {
 
-			foreach(array_keys($_POST) as $chave){
-
-                eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
-			}
-			return $this->db->update('clientes', $this, "id = $id");
+			
+			 $this->loja->doUpdate();
+			redirect('principal');
 			
 		} else {
 
