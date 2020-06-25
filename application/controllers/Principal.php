@@ -18,12 +18,10 @@ class Principal extends CI_Controller {
 
 		if (!$this->ion_auth->logged_in()) {
 			redirect('usuarios/login', 'refresh');
-		}if (!$this->ion_auth->logged_in()) {
-		redirect('usuarios/login', 'refresh');
-	}
+		}
+
 		$this->load->view('lyout/topo');
-		$this->load->view('lyout/meio');
-		
+		$this->load->view('lyout/meio');		
 		//$this->load->view('welcome_message');
 		$this->load->view('lyout/rodape');
 //		redirect('auth/login', 'refresh');

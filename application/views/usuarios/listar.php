@@ -17,6 +17,7 @@
       </div><!-- /.container-fluid -->
     </section>
 
+ 
     <!-- Main content -->
     <section class="content"> 
 
@@ -33,13 +34,17 @@
           </div>
         </div>
         <div class="card-body">
-          
+       
 <div class="row row text-right">
   <div class="col-md-12">
     <a href="<?php echo base_url('admin/usuarios/modulo')?>" title="Novo Usuario" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
   </div>
 
+<?php 
+    errosValidacao();
+    getMsg('msgCadastro');
 
+?> 
 
 </div>
         <table class="table table-striped">
@@ -64,8 +69,8 @@
                   ') . '</td>';
                   echo '<td class="text-center">';
                   
-                  echo '<a href=" '. base_url('admin/usuarios/modulo/'. $usuario->id ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
-                  echo ' <a href="'. base_url('admin/usuarios/del/'. $usuario->id ) .'" title="Exluir" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>';
+                  echo '<a href=" '. base_url('admin/usuarios/modulo/'. $usuario->id ) .' " title="Editar" class="btn btn-primary "><i class="fas fa-edit"></i></a>';
+                  echo ' <a href="'. base_url('admin/usuarios/del/'. $usuario->id ) .'" title="Exluir" class="btn btn-danger btn-apagar-registro"><i class="far fa-trash-alt"></i></a>';
 
 
                   echo '</td>';
