@@ -36,44 +36,47 @@
           
 <div class="row row text-right">
   <div class="col-md-12">
-    <a href="<?php echo base_url('cliente/novo')?>" title="Novo cliente" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
+    <a href="<?php echo base_url('categoria/novo')?>" title="Novo categoria" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
   </div>
+
+
   <?php 
     errosValidacao();
     getMsg('msgCadastro');
 
 ?> 
 
-
 </div>
         <table class="table table-striped">
           <thead>
             <tr>
               <td>Nome</td>
-              <td>Endereço</td>
-              <td>Telefone</td>
-              <td>E-mail</td>
+              <td>Categoria Pai</td>
+              
               <td class="text-center">Status</td>
               <td class="text-center">Ações</td>  
             </tr>
           </thead>
           <tbody>
             <?php 
-              foreach($clientes as $cliente){
+              foreach($categorias as $categoria){
+
+                
+               $nomes =  $this->categoriapaimodel->nomeCatPai($categoria['id_categoria_pai']);
+               //vai buscar no model o nome para listar aqui... não muito
+               //bonito mais vamos ver 
 
                 echo '<tr>';
-                  echo '<td>'. $cliente['nome']. '</td>';
-                  echo '<td>'. $cliente['endereco']." - ".$cliente['endereco_numero'].' - '. $cliente['bairro']. '</td>';
-                  echo '<td>'. $cliente['telefone']. '</td>';
-                  echo '<td>'. $cliente['email']. '</td>';
-                  echo '<td class="text-center">'. ($cliente['status'] == 1 ? 
+                  echo '<td>'. $categoria['nome']. '</td>';
+                  echo '<td>'. $nomes. '</td>';
+                  echo '<td class="text-center">'. ($categoria['status'] == 1 ? 
                   '<span class="btn btn-success">Ativo</span>' : 
                   '<span class="btn btn-warning">Inativo</span>
                   ') . '</td>';
                   echo '<td class="text-center">';
                   
-                  echo '<a href=" '. base_url('cliente/editar/'. $cliente['id'] ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
-                  echo ' <a href="'. base_url('cliente/excluir/'. $cliente['id'] ) .'" title="Exluir" class="btn btn-danger btn-apagar-registro"><i class="far fa-trash-alt"></i></a>';
+                  echo '<a href=" '. base_url('categoria/editar/'. $categoria['id'] ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
+                  echo ' <a href="'. base_url('categoria/excluir/'. $categoria['id'] ) .'" title="Exluir" class="btn btn-danger btn-apagar-registro"><i class="far fa-trash-alt"></i></a>';
 
 
                   echo '</td>';

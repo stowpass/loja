@@ -6,7 +6,7 @@ function setMsg($id, $msg, $tipo)
     $CI =& get_instance();
     switch ($tipo) {
 
-        case 'error':
+        case 'erro':
             $CI->session->set_flashdata($id, '<dic class="alert alert-danger" role="alert">' . $msg . '</div>');
 
             break;

@@ -79,16 +79,16 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-               <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                      Usuarios
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview" style="display: none;">
-                  <li class="nav-item">
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Usuarios
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
+                <li class="nav-item">
                   <a href="<?php echo site_url('admin/usuarios'); ?>" class="nav-link">
                     <i class="far fa-address-book"></i>
                     <p>Lista de Usuarios</p>
@@ -101,67 +101,117 @@
                   </a>
                 </li>
 
-                  </ul>
+              </ul>
+            </li>
+
+
+
+
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Config
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('admin/config'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Loja</p>
+                  </a>
                 </li>
 
 
 
+
+              </ul>
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Categorias
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('categoria'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista Categorias</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('categoria/novo'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Novo categoria</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
             
 
-                <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                      Config
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="<?php echo base_url('admin/config'); ?>" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Loja</p>
-                      </a>
-                    </li>
-
-
-
-
-                  </ul>
-
-               
-
-                <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                      Clientes
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview" style="display: none;">
-                    <li class="nav-item">
-                      <a href="<?php echo base_url('cliente'); ?>" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Lista Clientes</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="<?php echo base_url('cliente/novo'); ?>" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Novo Cliente</p>
-                      </a>
-                    </li>
-
-                  </ul>
-                </li>
-
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Categorias PAI
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                  <a href="<?php echo base_url('admin/login/sair'); ?>" class="nav-link">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <p>Sair</p>
+                  <a href="<?php echo base_url('categoriapai'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista Categoria PAIS</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('categoriapai/novo'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Nova categoria PAI</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Clientes
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('cliente'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista Clientes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('cliente/novo'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Novo Cliente</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="<?php echo base_url('admin/login/sair'); ?>" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Sair</p>
+              </a>
+            </li>
         </nav>
         <!-- /.sidebar-menu -->
       </div>

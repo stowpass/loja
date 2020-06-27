@@ -2,96 +2,78 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class ClienteModel extends CI_Model
+class CategoriaModel extends CI_Model
 {
 
-    public function listar_clientes_com_id($id){
+    public function listar_categorias_com_id($id)
+    {
         //retorna os dados do cliente
 
         $this->db->where('id', $id);
 
         $this->db->limit(1);
-        $query =  $this->db->get('clientes');
+        $query =  $this->db->get('categorias');
         return $query->row();
 
-       // return $this->db->from('clientes')->where('id', $id)->get()->result_array();
-    } 
+        // return $this->db->from('categorias')->where('id', $id)->get()->result_array();
+    }
 
-    public function listarClientes()
+    public function listarCategorias()
     {
-        $this->db->from('clientes');
+        $this->db->from('categorias');
         $this->db->order_by('nome', 'asc');
         $query = $this->db->get();
         return $query->result_array();
         // Antiga tava fazendo assim
-        /// return $this->db->get('clientes')->order_by('id', 'desc')->result_array();
-	    ///
+        /// return $this->db->get('categorias')->order_by('id', 'desc')->result_array();
+        ///
     }
 
 
-    public function getClientesId($id)
-    {
 
-        $this->db->where('id', $id);
 
-        $this->db->limit(1);
-        $query =  $this->db->get('clientes');
-        return $query->row();
-    }
-    public function excluir($id)
-    {
-         $this->db->delete('clientes', "id = $id");
-        
-    }
 
     public function salvar()
     {
- 
-        $dados["nome"]                = $_POST["nome"];
-        $dados["data_nascimento"]    = formataDataDB($_POST["data_nascimento"]);
-        $dados["cpf"]                = $_POST["cpf"];
-        $dados["endereco"]           = $_POST["endereco"];
-        $dados["endereco_numero"]    = $_POST["endereco_numero"];
-        $dados["complemento"]        = $_POST["complemento"];
-        $dados["bairro"]             = $_POST["bairro"];
-        $dados["cidade"]             = $_POST["cidade"];
-        $dados["cep"]                = $_POST["cep"];
-        $dados["estado"]             = $_POST["estado"];
-        $dados["telefone"]           = $_POST["telefone"];
-        $dados["telefone_zap"]       = $_POST["telefone_zap"];
-        $dados["email"]              = $_POST["email"];
-        $dados["senha"]              = $_POST["senha"];
-        $dados["observacoes"]        = $_POST["observacoes"];
-            
-            return $this->db->insert('clientes', $dados);
 
+        $dados["nome"]                = $_POST["nome"];
+                if ($_POST["id_categoria_pai"] = NULL) {
+                      
+                    $dados["id_categoria_pai"]                = NULL;
+                } else {
+                    $dados["id_categoria_pai"]                = $_POST["id_categoria_pai"];
+                }
+
+        $dados["status"]                = $_POST["status"];
+
+        return $this->db->insert('categorias', $dados);
+    }
+
+
+
+
+    public function excluir($id)
+    {
+        $this->db->delete('categorias', "id = $id");
+        setMsg('msgCadastro', 'Categoria deletada com sucesso', 'sucesso');
     }
 
 
     public function atualizar($id)
     {
+
         $dados["nome"]                = $_POST["nome"];
-        $dados["data_nascimento"]    = formataDataDB($_POST["data_nascimento"]);
-        $dados["cpf"]                = $_POST["cpf"];
-        $dados["endereco"]           = $_POST["endereco"];
-        $dados["endereco_numero"]    = $_POST["endereco_numero"];
-        $dados["complemento"]        = $_POST["complemento"];
-        $dados["bairro"]             = $_POST["bairro"];
-        $dados["cidade"]             = $_POST["cidade"];
-        $dados["cep"]                = $_POST["cep"];
-        $dados["estado"]             = $_POST["estado"];
-        $dados["telefone"]           = $_POST["telefone"];
-        $dados["telefone_zap"]       = $_POST["telefone_zap"];
-        $dados["email"]              = $_POST["email"];
-        $dados["senha"]              = $_POST["senha"];
-        $dados["observacoes"]        = $_POST["observacoes"];
+        if ($_POST["id_categoria_pai"] = NULL) {
+              
+            $dados["id_categoria_pai"]                = NULL;
+        } else {
+            $dados["id_categoria_pai"]                = $_POST["id_categoria_pai"];
+        }
 
-        
-            return $this->db->update('clientes', $dados, "id = $id");
-         
-
+$dados["status"]                = $_POST["status"];
+        return $this->db->update('categorias', $dados, "id = $id");
+        setMsg('msgCadastro', 'Categoria Atualizada com sucesso', 'sucesso');
     }
-
 }
 
 
