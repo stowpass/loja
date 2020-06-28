@@ -62,14 +62,10 @@ $route['categoria/json'] = 'categoriacontroller/json';
 $route['categoria/json2'] = 'categoriacontroller/json2';
 */
 
-
-$route['cardapio'] = 'cardapiocontroller/index';
-$route['cardapio/salvar'] = 'cardapiocontroller/salvar';
-$route['cardapio/novo'] = 'cardapiocontroller/novo';
-$route['cardapio/editar/(:num)']= 'cardapiocontroller/editar/$1';
-$route['cardapio/atualizar/(:num)'] = 'cardapiocontroller/atualizar/$1';
-$route['cardapio/abrir/(:num)'] = 'cardapiocontroller/abrir/$1';
-$route['cardapio/excluir/(:num)'] = 'cardapiocontroller/excluir/$1';
-$route['cardapio/json'] = 'cardapiocontroller/json';
-$route['cardapio/json2'] = 'cardapiocontroller/json2';
-$route['cardapio/mobile'] = 'cardapiocontroller/mobile';
+$route['marca'] = 'marcacontroller/index';
+$route['marca/salvar'] = 'marcacontroller/salvar';
+$route['marca/novo'] = 'marcacontroller/novo';
+$route['marca/editar/(:num)']= 'marcacontroller/editar/$1';
+$route['marca/atualizar/(:num)'] = 'marcacontroller/atualizar/$1';
+$route['marca/abrir/(:num)'] = 'marcacontroller/abrir/$1';
+$route['marca/excluir/(:num)'] = 'marcacontroller/excluir/$1';

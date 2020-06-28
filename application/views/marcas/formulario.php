@@ -41,7 +41,7 @@
                     ?>
 
 
-                  <form role="form" action="<?php echo site_url('categoria/') . $acao;
+                  <form role="form" action="<?php echo site_url('marca/') . $acao;
                                             ?>" method="post">
                       <?php //foreach ($ver as $registro) :
                         ?>
@@ -52,35 +52,14 @@
 
                               <div class="form-group col-lg-9">
                                   <label for="exampleInputEmail1">*Nome:</label>
-                                  <input type="text" class="form-control" id="nome" name="nome" value="<?php echo ($categorias != NULL ? $categorias->nome : set_value('nome')); ?>" required>
+                                  <input type="text"
+                                  class="form-control" 
+                                  id="nome" 
+                                  name="nome" 
+                                  value="<?php echo ($marcas != NULL ? $marcas->nome : set_value('nome'));?>" required>
                               </div>
 
 
-                          </div>
-
-
-
-                          <div class="form-group">
-                              <label class="col-md-4 control-label" for="status">Caregoria PAI</label>
-                              <div class="col-md-4">
-                                  <select id="id_categoria_pai" name="id_categoria_pai" class="form-control">
-                                      <option value="" selected></option>
-                                      <?php foreach ($categoriaspais as $cat) { ?>
-                                          <?php if ($categorias) { // aqui se exixtir dados vindo em cvategorias, significa que vem para editar, dai precisa preencher esses dados e selecionar no selec o que ven do banco
-                                            ?>
-                                              <option value="<?= $cat->id; ?>" <?= ($categorias->id_categoria_pai == $cat->id ? 'selected=""' : '') ?>><?= $cat->nome; ?></option>
-
-                                          <?php } else { ?>
-
-
-                                              <option value="<?= $cat->id; ?>"><?= ($cat->nome); ?></option>
-
-                                          <?php } ?>
-
-                                      <?php  } ?>
-
-                                  </select>
-                              </div>
                           </div>
 
 
@@ -89,10 +68,10 @@
                               <label class="col-md-4 control-label" for="status">Status</label>
                               <div class="col-md-2">
                                   <select id="status" name="status" class="form-control">
-                                      <?php if ($categorias) { ?>
+                                      <?php if ($marcas) { ?>
 
-                                          <option value="1" <?= $categorias->status == 1 ? 'selected' : '' ?>>Ativo</option>
-                                          <option value="0" <?= $categorias->status == 0 ? 'selected' : '' ?>>Inativo</option>
+                                          <option value="1" <?= $marcas->status == 1 ? 'selected' : '' ?>>Ativo</option>
+                                          <option value="0" <?= $marcas->status == 0 ? 'selected' : '' ?>>Inativo</option>
                                       <?php  } else { ?>
                                           <option value="1">Ativo</option>
                                           <option value="0">Inativo</option>
@@ -100,23 +79,21 @@
 
                                   </select>
                               </div>
-
                           </div>
 
+                      </div>
 
-                          <!-- /.box-body -->
-                          <div class="row col-lg-12">
-                              <div class="box-footer mb-2 p-3">
-                                  <button type="submit" class="btn btn-primary">Salvar</button>
-                              </div>
-                              <div class="box-footer mb-2 p-3 col-lg-5">
-                                  <a href="<?php echo site_url('categoria') ?>">Voltar</a>
-                              </div>
+
+                      <!-- /.box-body -->
+                      <div class="row col-lg-12">
+                          <div class="box-footer mb-2 p-3">
+                              <button type="submit" class="btn btn-primary">Salvar</button>
                           </div>
+                          <div class="box-footer mb-2 p-3 col-lg-5">
+                              <a href="<?php echo site_url('marca') ?>">Voltar</a>
+                          </div>
+                      </div>
 
-                          <?php if ($categorias) { ?>
-                              <input type="hidden" name="id" value="<?= $categorias->id ?>">
-                          <?php  } ?>
                   </form>
 
 
@@ -132,4 +109,5 @@
   </section>
   <!-- /.content -->
   </div>
+ 
   <!-- /.content-wrapper -->

@@ -36,7 +36,7 @@
           
 <div class="row row text-right">
   <div class="col-md-12">
-    <a href="<?php echo base_url('categoriapai/novo')?>" title="Novo categoria" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
+    <a href="<?php echo base_url('marca/novo')?>" title="Nova Marca" class="btn btn-success"><i class="fas fa-plus-square"></i> Novo</a>
   </div>
 
 
@@ -50,7 +50,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <td>Nome da Categoria Pai</td>
+              <td>Nome da Marca</td>
               
               
               <td class="text-center">Status</td>
@@ -59,18 +59,18 @@
           </thead>
           <tbody>
             <?php 
-              foreach($categoriaspai as $categoriapai){
+              foreach($marcas as $marca){
 
                 echo '<tr>';
-                  echo '<td>'. $categoriapai['nome']. '</td>';
-                  echo '<td class="text-center">'. ($categoriapai['status'] == 1 ? 
+                  echo '<td>'. $marca['nome']. '</td>';
+                  echo '<td class="text-center">'. ($marca['status'] == 1 ? 
                   '<span class="btn btn-success">Ativo</span>' : 
                   '<span class="btn btn-warning">Inativo</span>
                   ') . '</td>';
                   echo '<td class="text-center">';
                   
-                  echo '<a href=" '. base_url('categoriapai/editar/'. $categoriapai['id'] ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
-                  echo ' <a href="'. base_url('categoriapai/excluir/'. $categoriapai['id'] ) .'" title="Exluir" class="btn btn-danger btn-apagar-registro"><i class="far fa-trash-alt"></i></a>';
+                  echo '<a href=" '. base_url('marca/editar/'. $marca['id'] ) .' " title="Editar" class="btn btn-primary"><i class="fas fa-edit"></i></a>';
+                  echo ' <a href="'. base_url('marca/excluir/'. $marca['id'] ) .'" title="Exluir" class="btn btn-danger btn-apagar-registro"><i class="far fa-trash-alt"></i></a>';
 
 
                   echo '</td>';

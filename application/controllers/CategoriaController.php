@@ -24,6 +24,7 @@ class CategoriaController extends CI_Controller
 
 		$data['categorias'] = $this->categoriamodel->listarCategorias();
 		$data['categoriaspais'] = $this->categoriapaimodel->listarCategoriaspailinha();
+		//precisei criar esse metodo para trazer apena uma linha do banco
 		$data['titulo'] = 'Lista de categorias';
 
 		$this->load->view('lyout/topo');

@@ -180,6 +180,32 @@
               </ul>
             </li>
 
+            
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Marcas
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('marca'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista Marcas</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('marca/novo'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Nova Marca</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
 
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">

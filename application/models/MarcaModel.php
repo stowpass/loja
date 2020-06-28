@@ -2,30 +2,30 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class CategoriaModel extends CI_Model
+class MarcaModel extends CI_Model
 {
 
-    public function listar_categorias_com_id($id)
+    public function listar_marcas_com_id($id)
     {
         //retorna os dados do cliente
 
         $this->db->where('id', $id);
 
         $this->db->limit(1);
-        $query =  $this->db->get('categorias');
+        $query =  $this->db->get('marcas');
         return $query->row();
 
-        // return $this->db->from('categorias')->where('id', $id)->get()->result_array();
+        // return $this->db->from('marcas')->where('id', $id)->get()->result_array();
     }
 
-    public function listarCategorias()
+    public function listarMarcas()
     {
-        $this->db->from('categorias');
+        $this->db->from('marcas');
         $this->db->order_by('nome', 'asc');
         $query = $this->db->get();
         return $query->result_array();
         // Antiga tava fazendo assim
-        /// return $this->db->get('categorias')->order_by('id', 'desc')->result_array();
+        /// return $this->db->get('marcas')->order_by('id', 'desc')->result_array();
         ///
     }
 
@@ -36,17 +36,11 @@ class CategoriaModel extends CI_Model
     public function salvar()
     {
 
-        $dados["nome"]                = $_POST["nome"];
-                if ($_POST["id_categoria_pai"] = NULL) {
-                      
-                    $dados["id_categoria_pai"]                = NULL;
-                } else {
-                    $dados["id_categoria_pai"]                = $_POST["id_categoria_pai"];
-                }
-
-        $dados["status"]                = $_POST["status"];
-
-        return $this->db->insert('categorias', $dados);
+        foreach(array_keys($_POST) as $chave){
+            eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
+        }
+        
+        return $this->db->insert('marcas', $this);
     }
 
 
@@ -54,28 +48,21 @@ class CategoriaModel extends CI_Model
 
     public function excluir($id)
     {
-        $this->db->delete('categorias', "id = $id");
-        setMsg('msgCadastro', 'Categoria deletada com sucesso', 'erro');
+        $this->db->delete('marcas', "id = $id");
+        setMsg('msgCadastro', 'marcas deletada com sucesso', 'erro');
     }
 
 
     public function atualizar($id)
     {
 
-        
-        $dados["nome"] = $_POST["nome"];
-         if ($_POST["id_categoria_pai"] != NULL) {
-           
-                        $dados["id_categoria_pai"]= $_POST["id_categoria_pai"];
+        foreach(array_keys($_POST) as $chave){
+            eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
+        }
 
-               
-            } else {
-                $dados["id_categoria_pai"]= NULL;
-            }
-        $dados["status"]                = $_POST["status"];
-
-        return $this->db->update('categorias', $dados, "id = $id");
-        setMsg('msgCadastro', 'Categoria Atualizada com sucesso', 'sucesso');
+        return $this->db->update('marcas', $this, "id = $id");
+       
+        setMsg('msgCadastro', 'marcas Atualizada com sucesso', 'sucesso');
     }
 }
 
@@ -98,7 +85,7 @@ class ClienteModel extends CI_Model {
                 eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
             }
             
-            return $this->db->insert('clientes', $this);
+            return $this->db->insert('marcas', $this);
 
     }
     public function atualizar($id)
@@ -108,29 +95,29 @@ class ClienteModel extends CI_Model {
                 eval('$this->' . $chave . ' = $_POST["' . $chave . '"];');
             }
 
-            return $this->db->update('clientes', $this, "id = $id");
+            return $this->db->update('marcas', $this, "id = $id");
          
 
     }
     public function excluir($id)
     {
-         $this->db->delete('clientes', "id = $id");
+         $this->db->delete('marcas', "id = $id");
         
     }
    
-    public function listarClientes()
+    public function listarmarcas()
     {
-        $this->db->from('clientes');
+        $this->db->from('marcas');
         $this->db->order_by('nome', 'asc');
         $query = $this->db->get();
         return $query->result_array();
         // Antiga tava fazendo assim
-        /// return $this->db->get('clientes')->order_by('id', 'desc')->result_array();
+        /// return $this->db->get('marcas')->order_by('id', 'desc')->result_array();
 	    ///
     }
-    public function listarclientes_com_id($id){
+    public function listarmarcas_com_id($id){
         //retorna os dados do cliente
-        return $this->db->from('clientes')->where('id', $id)->get()->result_array();
+        return $this->db->from('marcas')->where('id', $id)->get()->result_array();
     }       
 
 
@@ -138,8 +125,8 @@ class ClienteModel extends CI_Model {
 
         $this->db->select("SELECT COLUMN_NAME as indice
                      FROM INFORMATION_SCHEMA.COLUMNS 
-                     WHERE TABLE_NAME = 'clientes'",false);
-        $campos = $this->db->get('clientes');
+                     WHERE TABLE_NAME = 'marcas'",false);
+        $campos = $this->db->get('marcas');
         return $campos;
         
     }
@@ -152,7 +139,7 @@ class ClienteModel extends CI_Model {
         //essa linha vai no banco e traz os nomes dos campos - indices
         $query = $this->db->query("SELECT COLUMN_NAME as nome_campo
         FROM INFORMATION_SCHEMA.COLUMNS 
-        WHERE TABLE_NAME = 'clientes'");
+        WHERE TABLE_NAME = 'marcas'");
         //Nesse momento eu pego esses nomes e coloco em um array
         $campos = $query->result_array();
         //agora nessse momento eu crio a estrutura para ser 
