@@ -232,6 +232,32 @@
               </ul>
             </li>
 
+            
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Produtos
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" style="display: none;">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('produto'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lista Produtos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('produto/novo'); ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Novo Produto</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
             <li class="nav-item">
               <a href="<?php echo base_url('admin/login/sair'); ?>" class="nav-link">
                 <i class="fas fa-sign-out-alt"></i>

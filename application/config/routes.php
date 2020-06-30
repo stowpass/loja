@@ -69,3 +69,11 @@ $route['marca/editar/(:num)']= 'marcacontroller/editar/$1';
 $route['marca/atualizar/(:num)'] = 'marcacontroller/atualizar/$1';
 $route['marca/abrir/(:num)'] = 'marcacontroller/abrir/$1';
 $route['marca/excluir/(:num)'] = 'marcacontroller/excluir/$1';
+
+$route['produto'] = 'produtocontroller/index';
+$route['produto/salvar'] = 'produtocontroller/salvar';
+$route['produto/novo'] = 'produtocontroller/novo';
+$route['produto/editar/(:num)']= 'produtocontroller/editar/$1';
+$route['produto/atualizar/(:num)'] = 'produtocontroller/atualizar/$1';
+$route['produto/abrir/(:num)'] = 'produtocontroller/abrir/$1';
+$route['produto/excluir/(:num)'] = 'produtocontroller/excluir/$1';
