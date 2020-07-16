@@ -42,21 +42,7 @@ public function lista()
     }
 
 
-    public function getprodutosId($id)
-    {
-
-        $this->db->where('id', $id);
-
-        $this->db->limit(1);
-        $query =  $this->db->get('produtos');
-        return $query->row();
-    }
-    public function excluir($id)
-    {
-         $this->db->delete('produtos', "id = $id");
-        
-    }
-
+ 
     public function salvar()
     {
  /*
@@ -117,6 +103,26 @@ public function lista()
          
 
     }
+    public function listaMarcas()
+    {
+       $this->db->where('status', 1);
+       return $this->db->get('marcas')->result();
+
+    }
+    public function listaCategorias()
+    {
+       $this->db->where('status', 1);
+       return $this->db->get('categorias')->result();
+
+    }
+    
+    public function excluir($id)
+    {
+         $this->db->delete('produtos', "id = $id");
+        
+    }
+    
+
 
 }
 

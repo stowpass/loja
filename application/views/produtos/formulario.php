@@ -67,7 +67,7 @@
                           <div class="row col-lg-12">
                               <div class="form-group col-lg-2">
                                   <label for="exampleInputPassword1">Valor:</label>
-                                  <input type="text" class="form-control " required id="valor" name="valor" value="<?php echo ($produtos != NULL ? $produtos->valor : set_value('valor')); ?>">
+                                  <input type="text" class="form-control input_moeda" required id="valor" name="valor" value="<?php echo ($produtos != NULL ? $produtos->valor : set_value('valor')); ?>">
                               </div>
 
                               <div class="form-group col-lg-2">
@@ -159,12 +159,17 @@
                                   <label class="col-md-12 control-label" for="status">Marca</label>
                                   <div class="col-md-12">
                                       <select id="id_marca" name="id_marca" class="form-control">
-                                          <?php if ($produtos) { ?>
+                                      <option value=""></option>
+                                      <?php  foreach ($marcas as $marca) { ?>
+                                          <?php if ($dados) { ?>
 
 
                                           <?php  } else { ?>
+                                            <option value="<?= $marca->id; ?>"><?=$marca->nome; ?></option>
 
                                           <?php  } ?>
+
+                                    <?php  } // fim do foreach ?>
 
                                       </select>
                                   </div>
@@ -174,11 +179,17 @@
                                   <label class="col-md-12 control-label" for="status">Categoria</label>
                                   <div class="col-md-12">
                                       <select id="id_categoria" name="id_categoria" class="form-control">
-                                          <?php if ($produtos) { ?>
+                                      <option value=""></option>
+                                      <?php foreach ($categorias as $categoria) { ?>
+                                          <?php if ($dados) { ?>
 
                                           <?php  } else { ?>
+                                            <option value="<?= $categoria->id; ?>"><?=$categoria->nome; ?></option>
+
 
                                           <?php  } ?>
+                                        <?php  } ?>
+                                          
 
                                       </select>
                                   </div>

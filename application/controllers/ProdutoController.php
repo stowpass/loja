@@ -35,6 +35,8 @@ class ProdutoController extends CI_Controller
 		$this->load->view('lyout/topo');
 		$data['produtos'] = "";
 		$data['acao'] = "salvar";
+		$data['categorias'] = $this->produtomodel->listaCategorias();
+		$data['marcas'] = $this->produtomodel->listaMarcas();
 		$data['titulo'] = 'Cadastro de Produtos';
 		$this->load->view('produtos/formulario', $data);
 		$this->load->view('lyout/rodape');
